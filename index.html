@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter Harwood | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #1a1a2e;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Welcome banner */
+        #welcome-banner {
+            background-color: #16213e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Hero section */
+        header {
+            background-color: #0f3460;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #a8c6fa;
+        }
+
+        /* General section styling */
+        section {
+            padding: 50px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0f3460;
+            padding-bottom: 8px;
+            color: #0f3460;
+        }
+
+        section p {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        /* Projects grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background-color: #dce8ff;
+        }
+
+        .project-card p {
+            padding: 10px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Contact form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        form label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        form input,
+        form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            width: 100%;
+        }
+
+        form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        form button {
+            background-color: #0f3460;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        form button:hover {
+            background-color: #16213e;
+        }
+
+        footer {
+            background-color: #1a1a2e;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation menu linking to the three main sections -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Welcome banner updated dynamically by JavaScript -->
+    <div id="welcome-banner">Welcome, visitor!</div>
+
+    <!-- Page header / hero -->
+    <header>
+        <h1>Hunter Harwood</h1>
+        <p>Software Development Student | U.S. Navy Veteran | Aspiring Developer</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <p>
+            Hi, I'm Hunter Harwood — a Software Development student at ECPI University with a 3.95 GPA,
+            expected to graduate in August 2027. I'm a U.S. Navy veteran (Boatswain's Mate) who brings
+            discipline, problem-solving, and a strong work ethic to everything I build.
+        </p>
+        <p>
+            I have experience in HTML, CSS, JavaScript, Kotlin, and Android development. I enjoy building
+            practical projects and am actively looking for software development internship opportunities.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <a class="project-card" href="https://github.com/hunhar4916" target="_blank">
+                <img src="https://via.placeholder.com/300x140?text=NeighborBoard" alt="NeighborBoard App">
+                <p>NeighborBoard App</p>
+            </a>
+
+            <!-- Project 2 -->
+            <a class="project-card" href="https://github.com/hunhar4916" target="_blank">
+                <img src="https://via.placeholder.com/300x140?text=Photo+Gallery" alt="Photo Gallery App">
+                <p>Photo Gallery App</p>
+            </a>
+
+            <!-- Project 3 -->
+            <a class="project-card" href="https://github.com/hunhar4916" target="_blank">
+                <img src="https://via.placeholder.com/300x140?text=Temp+Converter" alt="Temperature Converter">
+                <p>Temperature Converter</p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Have a question or want to connect? Fill out the form below.</p>
+
+        <form>
+            <label for="sender-name">Your Name</label>
+            <input type="text" id="sender-name" placeholder="John Doe">
+
+            <label for="sender-email">Email Address</label>
+            <input type="email" id="sender-email" placeholder="john@example.com">
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="Subject">
+
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message here..."></textarea>
+
+            <button type="button">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hunter Harwood. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Prompt the user for their name and store it in a variable
+        var userName = prompt("Welcome! What is your name?");
+
+        // If the user entered a name, update the welcome banner dynamically
+        if (userName && userName.trim() !== "") {
+            document.getElementById("welcome-banner").textContent =
+                "Welcome, " + userName + "! Thanks for visiting my portfolio.";
+        } else {
+            document.getElementById("welcome-banner").textContent =
+                "Welcome to my portfolio!";
+        }
+    </script>
+
+</body>
+</html>
