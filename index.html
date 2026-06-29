@@ -15,6 +15,122 @@
             font-family: Arial, sans-serif;
             color: #333;
             line-height: 1.6;
+            background-color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* ── Dark Mode Class ── */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode nav,
+        body.dark-mode footer {
+            background-color: #0a0a0a;
+        }
+
+        body.dark-mode header {
+            background-color: #0a1628;
+        }
+
+        body.dark-mode section h2 {
+            color: #a8c6fa;
+            border-bottom-color: #a8c6fa;
+        }
+
+        body.dark-mode .project-card {
+            border-color: #444;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode form input,
+        body.dark-mode form textarea {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+            border-color: #555;
+        }
+
+        body.dark-mode #welcome-banner {
+            background-color: #0a0a0a;
+        }
+
+        body.dark-mode .featured-box {
+            background-color: #1e1e1e;
+            border-color: #444;
+        }
+
+        body.dark-mode .featured-box h3 {
+            color: #a8c6fa;
+        }
+
+        body.dark-mode .featured-box a {
+            color: #90caf9;
+        }
+
+        body.dark-mode .skills-list li {
+            background-color: #1e2a3a;
+            color: #a8c6fa;
+        }
+
+        /* ── Dark Mode Toggle Bar ── */
+        #dark-mode-bar {
+            background-color: #f0f0f0;
+            padding: 8px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        body.dark-mode #dark-mode-bar {
+            background-color: #1a1a1a;
+            border-bottom-color: #333;
+            color: #f0f0f0;
+        }
+
+        /* Toggle switch styling */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider-knob {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+
+        .slider-knob:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .toggle-switch input:checked + .slider-knob {
+            background-color: #0f3460;
+        }
+
+        .toggle-switch input:checked + .slider-knob:before {
+            transform: translateX(20px);
         }
 
         /* Navigation bar */
@@ -23,6 +139,7 @@
             padding: 15px 30px;
             position: sticky;
             top: 0;
+            z-index: 100;
         }
 
         nav a {
@@ -83,6 +200,25 @@
             font-size: 16px;
         }
 
+        /* ── Skills List (loop-generated) ── */
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+            padding: 0;
+        }
+
+        .skills-list li {
+            background-color: #e8f0fe;
+            color: #0f3460;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
         /* Projects grid */
         .projects-grid {
             display: grid;
@@ -116,6 +252,84 @@
             padding: 10px;
             font-weight: bold;
             margin: 0;
+        }
+
+        /* ── Featured Content Section ── */
+        .featured-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .featured-box {
+            flex: 1;
+            min-width: 240px;
+            border: 2px solid #0f3460;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f4f8ff;
+        }
+
+        .featured-box h3 {
+            font-size: 18px;
+            color: #0f3460;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #ccd;
+            padding-bottom: 6px;
+        }
+
+        .featured-box ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .featured-box ul li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .featured-box a {
+            color: #0f3460;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .featured-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Image links inside Personal Projects box */
+        .project-thumb-link {
+            display: inline-block;
+            margin: 6px 6px 6px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 2px solid #0f3460;
+            text-decoration: none;
+            color: #0f3460;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            width: 120px;
+        }
+
+        .project-thumb-link img {
+            width: 120px;
+            height: 70px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-thumb-link span {
+            display: block;
+            padding: 4px;
+            background-color: #e8f0fe;
+        }
+
+        /* Hidden utility class */
+        .hidden {
+            display: none;
         }
 
         /* Contact form */
@@ -171,10 +385,20 @@
 </head>
 <body>
 
-    <!-- Navigation menu linking to the three main sections -->
+    <!-- ── Dark Mode Toggle Bar ── -->
+    <div id="dark-mode-bar">
+        <label class="toggle-switch" for="dark-toggle">
+            <input type="checkbox" id="dark-toggle">
+            <span class="slider-knob"></span>
+        </label>
+        <span>Dark Mode</span>
+    </div>
+
+    <!-- Navigation menu -->
     <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#featured">Featured</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -187,7 +411,7 @@
         <p>Software Development Student | U.S. Navy Veteran | Aspiring Developer</p>
     </header>
 
-    <!-- About Section -->
+    <!-- ── About Section ── -->
     <section id="about">
         <h2>About</h2>
         <p>
@@ -199,12 +423,16 @@
             I have experience in HTML, CSS, JavaScript, Kotlin, and Android development. I enjoy building
             practical projects and am actively looking for software development internship opportunities.
         </p>
+
+        <!-- Skills list — populated by a forEach() loop in JavaScript -->
+        <p><strong>Skills &amp; Technologies:</strong></p>
+        <ul class="skills-list" id="skills-list"></ul>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ── Projects Section ── -->
     <section id="projects">
         <h2>Projects</h2>
-        <div class="projects-grid">
+        <div class="projects-grid" id="projects-grid">
 
             <!-- Project 1 -->
             <a class="project-card" href="https://github.com/hunhar4916" target="_blank">
@@ -227,12 +455,51 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ── Featured Content Section ── -->
+    <section id="featured">
+        <h2>Featured Content</h2>
+
+        <div class="featured-grid">
+
+            <!-- University Resources div -->
+            <div id="university-resources" class="featured-box">
+                <h3>🎓 University Resources</h3>
+                <ul>
+                    <li><a href="https://www.ecpi.edu/programs/technology/bachelor-of-science-software-and-computer-programming" target="_blank">ECPI Software Development Program</a></li>
+                    <li><a href="https://www.ecpi.edu/" target="_blank">ECPI University Home</a></li>
+                    <li><a href="https://ecpi.brightspace.com/" target="_blank">Student Portal (Brightspace)</a></li>
+                </ul>
+            </div>
+
+            <!-- Personal Projects div -->
+            <div id="personal-projects" class="featured-box">
+                <h3>💻 Personal Projects</h3>
+
+                <a class="project-thumb-link" href="https://github.com/hunhar4916/MobileApp" target="_blank">
+                    <img src="https://via.placeholder.com/120x70?text=MobileApp" alt="Mobile App Repo">
+                    <span>Mobile App</span>
+                </a>
+
+                <a class="project-thumb-link" href="https://github.com/hunhar4916/App-Development" target="_blank">
+                    <img src="https://via.placeholder.com/120x70?text=App+Dev" alt="App Development Repo">
+                    <span>App Dev</span>
+                </a>
+
+                <a class="project-thumb-link" href="https://hunhar4916.github.io/JavaScript-portfolio" target="_blank">
+                    <img src="https://via.placeholder.com/120x70?text=Portfolio" alt="Portfolio Site">
+                    <span>JS Portfolio</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Contact Section ── -->
     <section id="contact">
         <h2>Contact</h2>
         <p>Have a question or want to connect? Fill out the form below.</p>
 
-        <form>
+        <form id="contact-form">
             <label for="sender-name">Your Name</label>
             <input type="text" id="sender-name" placeholder="John Doe">
 
@@ -245,7 +512,7 @@
             <label for="message">Message</label>
             <textarea id="message" placeholder="Write your message here..."></textarea>
 
-            <button type="button">Submit</button>
+            <button type="button" id="submit-btn">Submit</button>
         </form>
     </section>
 
@@ -254,10 +521,10 @@
     </footer>
 
     <script>
-        // Prompt the user for their name and store it in a variable
-        var userName = prompt("Welcome! What is your name?");
 
-        // If the user entered a name, update the welcome banner dynamically
+        // ── Welcome Banner ──
+        // Prompt the user for their name and update the banner dynamically
+        var userName = prompt("Welcome! What is your name?");
         if (userName && userName.trim() !== "") {
             document.getElementById("welcome-banner").textContent =
                 "Welcome, " + userName + "! Thanks for visiting my portfolio.";
@@ -265,6 +532,68 @@
             document.getElementById("welcome-banner").textContent =
                 "Welcome to my portfolio!";
         }
+
+
+        // ── Skills Loop ──
+        // Array of 8 skills; forEach() creates a <li> for each and appends it to the list
+        var skills = ["HTML", "CSS", "JavaScript", "Kotlin", "Android Studio", "Git", "GitHub", "Python"];
+
+        var skillsList = document.getElementById("skills-list");
+
+        skills.forEach(function(skill) {
+            var li = document.createElement("li");
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        });
+
+
+        // ── Featured Content Conditional Logic ──
+        // Count how many project cards exist in the Projects section
+        var projectCards = document.querySelectorAll(".project-card");
+        var projectCount = projectCards.length;
+
+        var universityDiv = document.getElementById("university-resources");
+        var personalDiv   = document.getElementById("personal-projects");
+
+        // If fewer than 3 projects: show BOTH divs
+        // Otherwise (3 or more): show only Personal Projects, hide University Resources
+        if (projectCount < 3) {
+            universityDiv.classList.remove("hidden");
+            personalDiv.classList.remove("hidden");
+        } else {
+            personalDiv.classList.remove("hidden");
+            universityDiv.classList.add("hidden");
+        }
+
+
+        // ── Dark Mode Toggle ──
+        // addEventListener("change") fires when the checkbox is flipped
+        // classList.toggle() adds dark-mode when checked, removes it when unchecked
+        var darkToggle = document.getElementById("dark-toggle");
+
+        darkToggle.addEventListener("change", function() {
+            document.body.classList.toggle("dark-mode", this.checked);
+        });
+
+
+        // ── Form Submit Button ──
+        // Select the button with querySelector, then add a click listener
+        // event.preventDefault() stops the page from refreshing
+        // alert() shows a personalized confirmation using the name field's value
+        var submitBtn = document.querySelector("#submit-btn");
+
+        submitBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            var senderName = document.getElementById("sender-name").value.trim();
+
+            if (senderName === "") {
+                alert("Please enter your name before submitting.");
+            } else {
+                alert("Thank you, " + senderName + ", your message has been sent!");
+            }
+        });
+
     </script>
 
 </body>
