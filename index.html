@@ -374,6 +374,11 @@
             background-color: #16213e;
         }
 
+        form button:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+
         footer {
             background-color: #1a1a2e;
             color: #aaa;
@@ -576,22 +581,76 @@
         });
 
 
+        // ────────────────────────────────────────────────────────
+        // ASSIGNMENT PART 1: Dynamically add a new element
+        // createElement() + appendChild() build a new <p> introducing
+        // a recent project, added to the end of the About section.
+        // ────────────────────────────────────────────────────────
+        var aboutSection = document.getElementById("about");
+        var recentProjectPara = document.createElement("p");
+        recentProjectPara.id = "recent-project-note";
+        recentProjectPara.innerHTML = "<strong>Recent Project:</strong> I'm currently building " +
+            "<em>Grow an RNG Garden</em>, a farming/collection game built in Roblox Studio, " +
+            "alongside continued work on this JavaScript portfolio site.";
+        aboutSection.appendChild(recentProjectPara);
+
+
+        // ────────────────────────────────────────────────────────
+        // ASSIGNMENT PART 2: Reference/modify 2 existing elements
+        // 1. querySelector() grabs the Projects section heading and
+        //    gives it a new border color + larger font size.
+        // 2. querySelector() grabs the hero header and updates its
+        //    background color.
+        // ────────────────────────────────────────────────────────
+        var projectsHeading = document.querySelector("#projects h2");
+        projectsHeading.style.borderBottom = "4px solid #e94560";
+        projectsHeading.style.fontSize = "32px";
+
+        var pageHeader = document.querySelector("header");
+        pageHeader.style.backgroundColor = "#16213e";
+
+
         // ── Form Submit Button ──
-        // Select the button with querySelector, then add a click listener
-        // event.preventDefault() stops the page from refreshing
-        // alert() shows a personalized confirmation using the name field's value
+        // Select the button and form, then add a click listener
         var submitBtn = document.querySelector("#submit-btn");
+        var contactForm = document.getElementById("contact-form");
 
         submitBtn.addEventListener("click", function(event) {
-            event.preventDefault();
+            event.preventDefault(); // stop default form submission / page refresh
 
             var senderName = document.getElementById("sender-name").value.trim();
 
             if (senderName === "") {
                 alert("Please enter your name before submitting.");
-            } else {
-                alert("Thank you, " + senderName + ", your message has been sent!");
+                return;
             }
+
+            // Remove any leftover status message from a previous submit
+            var oldStatus = document.getElementById("form-status");
+            if (oldStatus) {
+                oldStatus.remove();
+            }
+
+            // ────────────────────────────────────────────────────
+            // ASSIGNMENT PART 3: Timed confirmation for form submission
+            // Step 1: show a "Sending..." message immediately
+            // ────────────────────────────────────────────────────
+            var statusMsg = document.createElement("p");
+            statusMsg.id = "form-status";
+            statusMsg.textContent = "Sending message...";
+            statusMsg.style.color = "#0f3460";
+            statusMsg.style.fontWeight = "bold";
+            contactForm.appendChild(statusMsg);
+
+            // Disable the button while "sending" so it can't be double-clicked
+            submitBtn.disabled = true;
+
+            // Step 2: after 2.5 seconds, swap in the confirmation message
+            setTimeout(function() {
+                statusMsg.textContent = "Message sent successfully! Thank you, " + senderName + ".";
+                statusMsg.style.color = "green";
+                submitBtn.disabled = false;
+            }, 2500);
         });
 
     </script>
